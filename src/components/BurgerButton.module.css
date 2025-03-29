@@ -1,0 +1,36 @@
+.button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: hsl(40, 55%, 84%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.line1 {
+  transform: translateY(-6px);
+}
+.line2 {
+  opacity: 1;
+}
+.line3 {
+  transform: translateY(6px);
+}
+
+.open .line1 {
+  transform: rotate(45deg);
+}
+.open .line2 {
+  opacity: 0;
+}
+.open .line3 {
+  transform: rotate(-45deg);
+}

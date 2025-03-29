@@ -1,0 +1,120 @@
+.nav {
+  background-color: hsl(30, 56%, 49%);
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    height: 8rem;
+  }
+}
+
+.navContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  color: hsl(40, 55%, 84%);
+}
+
+.link {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .link {
+    display: block;
+  }
+}
+
+.hoverEffect:hover {
+  color: white;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  object-fit: contain;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.dropdownContainer {
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dropdownContainer {
+    display: block;
+  }
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dropdownContainer:hover .dropdownMenu {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: lightgray;
+}
+
+.burgerMenu {
+  position: absolute;
+  right: 0;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .burgerMenu {
+    display: none;
+  }
+}

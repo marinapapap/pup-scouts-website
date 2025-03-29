@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from "./ServicesMenu.module.css";
+import { ChevronLeft } from "lucide-react"; // Import left chevron
 
 type Props = {
   onClose: () => void;
@@ -6,16 +8,16 @@ type Props = {
 
 const ServicesMenu = ({ onClose }: Props) => {
   return (
-    <div className="min-h-screen grid place-items-center bg-[hsl(40,58%,84%)] mb-20">
-      <div className="space-y-8 text-center">
-        <button onClick={onClose} className="text-4xl mb-6">
-          &larr; Back
+    <div className={styles.menu}>
+      <div className={styles.content}>
+        <button onClick={onClose} className={styles.backButton}>
+          <ChevronLeft className={styles.chevron} /> BACK
         </button>
-        <div className="flex flex-col space-y-4">
-          <Link href="/service-1" className="text-3xl hover:text-gray-300">
+        <div className={styles.linkContainer}>
+          <Link href="/service-1" className={styles.link}>
             WALKING
           </Link>
-          <Link href="/service-2" className="text-3xl hover:text-gray-300">
+          <Link href="/service-2" className={styles.link}>
             TRAINING
           </Link>
         </div>

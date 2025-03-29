@@ -1,10 +1,12 @@
+import Blurb from "@/components/Blurb";
+import NavBar from "@/components/Header";
+
 const Home: React.FC = () => {
   return (
-    <>
-      <h1 className="text-[hsl(11,79%,59%)] text-3xl font-bold">
-        Welcome to Pup Scouts!
-      </h1>
-    </>
+    <div>
+      <NavBar />
+      <Blurb />
+    </div>
   );
 };
 

@@ -1,11 +1,4 @@
 import "./globals.css";
-import { Roboto_Condensed } from "next/font/google";
-import NavBar from "../components/Header";
-
-const robotoCondensed = Roboto_Condensed({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export default function RootLayout({
   children,
@@ -14,10 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${robotoCondensed.className} bg-background text-foreground`}
-      >
-        <NavBar />
+      <body>
         <div>{children}</div>
       </body>
     </html>

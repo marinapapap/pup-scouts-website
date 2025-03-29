@@ -1,59 +1,86 @@
 "use client";
-
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import BurgerButton from "./BurgerButton";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
+  const [scrollValue, setScrollValue] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const handleScroll = () => {
+      const scroll = Math.min(window.scrollY, 80);
+      setScrollValue(scroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
+
+  const dynamicHeaderHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
+  const dynamicLogoSize = isMobile ? `${7 - scrollValue / 70}rem` : "7rem";
+  const logoMargin = isMobile ? `${2 - scrollValue / 100}rem` : "2rem";
 
   return (
     <>
-      <nav className="bg-[hsl(40,58%,84%)] p-5 md:p-10 md:justify-between md:items-center s-center fixed z-30 w-screen">
-        <div className="flex flex-wrap items-center justify-between">
-          <a className="text-2xl text-[hsl(12,78%,58%)] font-bold">
-            Pup Scouts UK
-          </a>
-          <div className="hidden md:flex md:items-center md:gap-12">
-            <Link href="/" className="hover:text-gray-300">
+      <nav className={styles.nav} style={{ height: dynamicHeaderHeight }}>
+        <div className={styles.navContainer}>
+          <div className={styles.navLinks}>
+            <Link href="/" className={styles.link}>
               Home
             </Link>
-            <Link href="/" className="hover:text-gray-300">
+            <Link href="/" className={`${styles.link} ${styles.hoverEffect}`}>
               About
             </Link>
-            <div className="relative group">
-              {/* Button and Dropdown Menu */}
-              <div>
-                <button className="hover:text-gray-300 focus:outline-none flex items-center gap-1">
-                  Services
-                </button>
-                <div className="absolute bg-white shadow-lg opacity-0 invisible group-hover:opacity-80 group-hover:visible transition-opacity duration-300">
-                  <Link
-                    href="/service-1"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    Walking
-                  </Link>
-                  <Link
-                    href="/service-2"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    Training
-                  </Link>
-                </div>
+            <Link href="/" className={styles.logoContainer}>
+              <Image
+                src="/logo.png"
+                alt="Pup Scouts Home"
+                width={120}
+                height={120}
+                className={styles.logo}
+                style={{
+                  width: dynamicLogoSize,
+                  height: dynamicLogoSize,
+                  margin: logoMargin,
+                }}
+              />
+            </Link>
+            <div className={styles.dropdownContainer}>
+              <button className={styles.dropdownButton}>Services</button>
+              <div className={styles.dropdownMenu}>
+                <Link href="/service-1" className={styles.dropdownItem}>
+                  Walking
+                </Link>
+                <Link href="/service-2" className={styles.dropdownItem}>
+                  Training
+                </Link>
               </div>
             </div>
-            <Link href="/" className="hover:text-gray-300">
+            <Link href="/" className={`${styles.link} ${styles.hoverEffect}`}>
               Contact
             </Link>
           </div>
-          <div className="md:hidden flex items-center">
+          <div className={styles.burgerMenu}>
             <BurgerButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
           </div>
         </div>
       </nav>
-
       <MobileMenu isOpen={isOpen} />
     </>
   );
