@@ -32,13 +32,13 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
-  const dynamicHeaderHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
-  const dynamicLogoSize = isMobile ? `${7 - scrollValue / 70}rem` : "7rem";
+  const headerHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
+  const logoSize = isMobile ? `${7 - scrollValue / 70}rem` : "7rem";
   const logoMargin = isMobile ? `${2 - scrollValue / 100}rem` : "2rem";
 
   return (
     <>
-      <nav className={styles.nav} style={{ height: dynamicHeaderHeight }}>
+      <nav className={styles.nav} style={{ height: headerHeight }}>
         <div className={styles.navContainer}>
           <div className={styles.navLinks}>
             <Link href="/" className={styles.link}>
@@ -55,13 +55,13 @@ const Header: React.FC = () => {
                 height={120}
                 className={styles.logo}
                 style={{
-                  width: dynamicLogoSize,
-                  height: dynamicLogoSize,
+                  width: logoSize,
+                  height: logoSize,
                   margin: logoMargin,
                 }}
               />
             </Link>
-            <div className={styles.dropdownContainer}>
+            {/* <div className={styles.dropdownContainer}>
               <button className={styles.dropdownButton}>Services</button>
               <div className={styles.dropdownMenu}>
                 <Link href="/service-1" className={styles.dropdownItem}>
@@ -71,7 +71,13 @@ const Header: React.FC = () => {
                   Training
                 </Link>
               </div>
-            </div>
+            </div> */}
+            <Link
+              href="/services"
+              className={`${styles.link} ${styles.hoverEffect}`}
+            >
+              Services
+            </Link>
             <Link href="/" className={`${styles.link} ${styles.hoverEffect}`}>
               Contact
             </Link>

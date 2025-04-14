@@ -25,13 +25,16 @@ const MobileMenu = ({ isOpen }: Props) => {
           <Link href="/" className={styles.link}>
             ABOUT
           </Link>
-          <button
+          {/* <button
             className={styles.servicesButton}
             onClick={() => setIsServicesOpen(true)}
             aria-label="Services option"
           >
             SERVICES <ChevronRight className={styles.chevron} />
-          </button>
+          </button> */}
+          <Link href="/services" className={styles.link}>
+            SERVICES
+          </Link>
           <Link href="/" className={styles.link}>
             CONTACT
           </Link>

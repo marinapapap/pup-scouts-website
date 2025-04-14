@@ -1,0 +1,27 @@
+.badgesContainer {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping */
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  margin: 0 2rem;
+}
+
+.badgesContainer img {
+  height: 165px;
+  width: auto;
+  object-fit: contain;
+  flex: 0 1 calc(50% - 5vw);
+  max-width: calc(50% - 5vw);
+}
+
+@media (min-width: 768px) {
+  .badgesContainer {
+    flex-wrap: nowrap;
+  }
+
+  .badgesContainer img {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+}
