@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import NavBar from "@/components/Header";
-import Badges from "@/components/services/Badges";
+import Badges from "@/components/shared/Badges";
 import styles from "./Services.module.css";
-import Divider from "@/components/shared/Divider";
 
 const Services: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Services: React.FC = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
+          <Link href="/services/dog-walking" className={styles.imageWrapper}>
             <Image
               src="/tree.png"
               alt="Dog walking"
@@ -26,8 +26,8 @@ const Services: React.FC = () => {
               className={styles.image}
             />
             <h1>Dog Walking</h1>
-          </div>
-          <div className={styles.imageWrapper}>
+          </Link>
+          <Link href="/services/dog-training" className={styles.imageWrapper}>
             <Image
               src="/dog.png"
               alt="Dog training"
@@ -36,10 +36,9 @@ const Services: React.FC = () => {
               className={styles.image}
             />
             <h1>Puppy Training</h1>
-          </div>
+          </Link>
         </div>
       </div>
-      <Divider />
       <Badges
         badges={[
           "jumping-jack",
@@ -48,7 +47,6 @@ const Services: React.FC = () => {
           "luscious-locks",
         ]}
       />
-      <Divider />
     </div>
   );
 };

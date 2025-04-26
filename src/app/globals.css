@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap");
 
 :root {
   --background: hsl(40, 58%, 84%);
@@ -28,4 +28,12 @@ button {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+}
+
+.font-light {
+  font-weight: 100;
+}
+
+.font-bold {
+  font-weight: 700;
 }
