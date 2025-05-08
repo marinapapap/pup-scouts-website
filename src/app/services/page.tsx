@@ -25,7 +25,7 @@ const Services: React.FC = () => {
               height={600}
               className={styles.image}
             />
-            <h1>Dog Walking</h1>
+            <h2>Dog Walking</h2>
           </Link>
           <Link href="/services/dog-training" className={styles.imageWrapper}>
             <Image
@@ -35,7 +35,7 @@ const Services: React.FC = () => {
               height={600}
               className={styles.image}
             />
-            <h1>Puppy Training</h1>
+            <h2>Puppy Training</h2>
           </Link>
         </div>
       </div>
@@ -46,6 +46,7 @@ const Services: React.FC = () => {
           "chase-master",
           "luscious-locks",
         ]}
+        hasDivider
       />
     </div>
   );

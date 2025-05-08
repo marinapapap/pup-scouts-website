@@ -12,16 +12,6 @@
   margin: 12rem 1rem 0 1rem;
 }
 
-.description h1 {
-  font-size: 4rem;
-  color: hsl(12, 83%, 63%);
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
 .description p {
   font-size: 1.5rem;
   text-align: center;
@@ -43,16 +33,6 @@
   height: auto;
   padding: 0;
   gap: 2rem;
-}
-
-.imageWrapper h1 {
-  font-size: 2.5rem;
-  color: hsl(12, 83%, 63%);
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
 }
 
 .imageWrapper img {

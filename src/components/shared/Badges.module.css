@@ -1,13 +1,13 @@
-.badgesContainer {
+.badges {
   display: flex;
-  flex-wrap: wrap; /* allow wrapping */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 5vw;
   margin: 0 2rem;
 }
 
-.badgesContainer img {
+.badges img {
   height: 165px;
   width: auto;
   object-fit: contain;
@@ -15,12 +15,16 @@
   max-width: calc(50% - 5vw);
 }
 
+.badgesWithPadding {
+  padding-block: 3rem;
+}
+
 @media (min-width: 768px) {
-  .badgesContainer {
+  .badges {
     flex-wrap: nowrap;
   }
 
-  .badgesContainer img {
+  .badges img {
     flex: 0 0 auto;
     max-width: none;
   }

@@ -44,7 +44,10 @@ const Header: React.FC = () => {
             <Link href="/" className={styles.link}>
               Home
             </Link>
-            <Link href="/" className={`${styles.link} ${styles.hoverEffect}`}>
+            <Link
+              href="/about"
+              className={`${styles.link} ${styles.hoverEffect}`}
+            >
               About
             </Link>
             <Link href="/" className={styles.logoContainer}>

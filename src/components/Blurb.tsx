@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Blurb.module.css"; // Import the CSS module
+import styles from "./Blurb.module.css";
 
 const Blurb: React.FC = () => {
   return (

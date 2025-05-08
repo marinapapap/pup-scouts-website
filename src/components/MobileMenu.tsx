@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import ServicesMenu from "./ServicesMenu";
-import { ChevronRight } from "lucide-react";
 import styles from "./MobileMenu.module.css";
 
 type Props = {
@@ -22,7 +21,7 @@ const MobileMenu = ({ isOpen }: Props) => {
           <Link href="/" className={styles.link}>
             HOME
           </Link>
-          <Link href="/" className={styles.link}>
+          <Link href="/about" className={styles.link}>
             ABOUT
           </Link>
           {/* <button

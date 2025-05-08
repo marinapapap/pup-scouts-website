@@ -5,13 +5,18 @@ import Divider from "./Divider";
 
 type BadgesProps = {
   badges: string[];
+  hasDivider?: boolean;
 };
 
-const Badges: React.FC<BadgesProps> = ({ badges }) => {
+const Badges: React.FC<BadgesProps> = ({ badges, hasDivider = false }) => {
   return (
     <>
-      <Divider />
-      <div className={styles.badgesContainer}>
+      {hasDivider && <Divider />}
+      <div
+        className={`${styles.badges} ${
+          !hasDivider ? styles.badgesWithPadding : ""
+        }`}
+      >
         {badges.map((badge, index) => {
           const pathToBadge = `/badges/${badge}.png`;
           const altText = `${badge.split("-").join(" ")} badge`;
@@ -27,7 +32,7 @@ const Badges: React.FC<BadgesProps> = ({ badges }) => {
           );
         })}
       </div>
-      <Divider />
+      {hasDivider && <Divider />}
     </>
   );
 };
