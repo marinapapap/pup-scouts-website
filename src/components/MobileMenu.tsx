@@ -34,7 +34,7 @@ const MobileMenu = ({ isOpen }: Props) => {
           <Link href="/services" className={styles.link}>
             SERVICES
           </Link>
-          <Link href="/" className={styles.link}>
+          <Link href="/contact" className={styles.link}>
             CONTACT
           </Link>
         </>

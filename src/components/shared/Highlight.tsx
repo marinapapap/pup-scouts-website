@@ -6,7 +6,11 @@ type HighlightProps = {
 };
 
 const Highlight: React.FC<HighlightProps> = ({ children }) => {
-  return <div className={styles.container}>{children}</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.highlight}>{children}</div>
+    </div>
+  );
 };
 
 export default Highlight;

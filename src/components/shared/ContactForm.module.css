@@ -1,0 +1,60 @@
+.contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactForm h3 {
+  color: hsl(12, 83%, 63%);
+}
+
+.contactForm button {
+  align-self: flex-end;
+  padding: 0.75rem 2rem; /* Taller and wider */
+  border: none;
+  border-radius: 50px; /* Makes it oblong or pill-shaped */
+  background-color: hsl(12, 83%, 63%);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contactForm button:hover {
+  background-color: hsl(12, 83%, 53%);
+}
+
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: transparent;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid hsl(12, 83%, 63%);
+  background-color: transparent;
+  font-size: 1.1rem;
+  font-family: inherit;
+  color: hsl(12, 83%, 63%);
+  transition: border-color 0.3s ease;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}

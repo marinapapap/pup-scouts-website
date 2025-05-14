@@ -81,7 +81,10 @@ const Header: React.FC = () => {
             >
               Services
             </Link>
-            <Link href="/" className={`${styles.link} ${styles.hoverEffect}`}>
+            <Link
+              href="/contact"
+              className={`${styles.link} ${styles.hoverEffect}`}
+            >
               Contact
             </Link>
           </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import NavBar from "@/components/Header";
 import styles from "./About.module.css";
 import Divider from "@/components/shared/Divider";
+import ContactForm from "@/components/shared/ContactForm";
 
 const Services: React.FC = () => {
   return (
@@ -37,6 +38,8 @@ const Services: React.FC = () => {
           </p>
         </div>
       </div>
+      <Divider />
+      <ContactForm />
       <Divider />
     </div>
   );
