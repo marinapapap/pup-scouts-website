@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./ServicesMenu.module.css";
-import { ChevronLeft } from "lucide-react"; // Import left chevron
+import { ChevronLeft } from "lucide-react";
 
 type Props = {
   onClose: () => void;

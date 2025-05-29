@@ -1,0 +1,19 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  text-align: center;
+  margin: 12rem auto 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.content h3 {
+  margin: 3rem 0;
+}
+
+.description {
+  margin: 0 2rem;
+}

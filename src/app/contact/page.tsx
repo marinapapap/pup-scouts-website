@@ -58,7 +58,6 @@ const Contact: React.FC = () => {
       </div>
       <Divider />
       <ContactForm />
-      <Divider />
     </div>
   );
 };

@@ -60,6 +60,11 @@ h3 {
   margin: 0;
 }
 
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
 .font-light {
   font-weight: 100;
 }

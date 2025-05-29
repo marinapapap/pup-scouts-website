@@ -6,5 +6,9 @@
   padding: 0 2rem;
   max-width: 1000px;
   text-align: center;
-  margin: 12rem auto 0;
+  margin: 12rem auto 5rem;
+}
+
+.textContent p:last-of-type {
+  margin-bottom: 0;
 }
