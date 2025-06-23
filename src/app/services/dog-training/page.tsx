@@ -9,7 +9,9 @@ const Services: React.FC = () => {
       <NavBar />
       <div className={styles.content}>
         <h1>Puppy Training Classes</h1>
+
         <Badges badges={["lead-work", "recall", "master-of-tricks"]} />
+
         <div className={styles.textContent}>
           <p>
             Here at Pup Scouts we offer a fantastic puppy training program,

@@ -18,11 +18,21 @@ const Services: React.FC = () => {
         </div>
         <div className={styles.imageContainer}>
           <Link href="/services/dog-walking" className={styles.imageWrapper}>
-            <Image src="/tree.png" alt="Dog walking" width={600} height={600} />
+            <Image
+              src="/images/tree.png"
+              alt="Dog walking"
+              width={600}
+              height={600}
+            />
             <h2>Dog Walking</h2>
           </Link>
           <Link href="/services/dog-training" className={styles.imageWrapper}>
-            <Image src="/dog.png" alt="Dog training" width={600} height={600} />
+            <Image
+              src="/images/dog.png"
+              alt="Dog training"
+              width={600}
+              height={600}
+            />
             <h2>Puppy Training</h2>
           </Link>
         </div>

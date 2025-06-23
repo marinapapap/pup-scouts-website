@@ -5,9 +5,9 @@ import Image from "next/image";
 import styles from "./Carousell.module.css";
 
 const images = [
-  "/dog-pics/dog-pic-1.jpg",
-  "/dog-pics/dog-pic-2.jpg",
-  "/dog-pics/dog-pic-3.jpg",
+  "/images/dog-pics/dog-pic-1.jpg",
+  "/images/dog-pics/dog-pic-2.jpg",
+  "/images/dog-pics/dog-pic-3.jpg",
 ];
 
 const Carousell: React.FC = () => {
@@ -43,17 +43,17 @@ const Carousell: React.FC = () => {
     return () => ref.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => {
-        const nextIndex = (prev + 1) % images.length;
-        scrollToIndex(nextIndex);
-        return nextIndex;
-      });
-    }, 4000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent((prev) => {
+  //       const nextIndex = (prev + 1) % images.length;
+  //       scrollToIndex(nextIndex);
+  //       return nextIndex;
+  //     });
+  //   }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className={styles.carouselWrapper}>

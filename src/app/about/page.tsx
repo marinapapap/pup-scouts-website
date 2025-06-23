@@ -11,8 +11,18 @@ const Services: React.FC = () => {
       <div className={styles.content}>
         <h1>About Us</h1>
         <div className={styles.imageContainer}>
-          <Image src="/polly.png" alt="Dog training" width={200} height={200} />
-          <Image src="/lucy.png" alt="Dog training" width={200} height={200} />
+          <Image
+            src="/images/polly.png"
+            alt="Dog training"
+            width={200}
+            height={200}
+          />
+          <Image
+            src="/images/lucy.png"
+            alt="Dog training"
+            width={200}
+            height={200}
+          />
         </div>
         <div className={styles.description}>
           <p>

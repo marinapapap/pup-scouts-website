@@ -18,7 +18,7 @@ const Badges: React.FC<BadgesProps> = ({ badges, hasDivider = false }) => {
         }`}
       >
         {badges.map((badge, index) => {
-          const pathToBadge = `/badges/${badge}.png`;
+          const pathToBadge = `/images/badges/${badge}.png`;
           const altText = `${badge.split("-").join(" ")} badge`;
 
           return (

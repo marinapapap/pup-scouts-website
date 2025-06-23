@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
         <Highlight>
           <div className={styles.highlight}>
             <Image
-              src="/squirrel.png"
+              src="/images/squirrel.png"
               alt="Dog training"
               width={180}
               height={180}

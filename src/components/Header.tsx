@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             </Link>
             <Link href="/" className={styles.logoContainer}>
               <Image
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="Pup Scouts Home"
                 width={120}
                 height={120}

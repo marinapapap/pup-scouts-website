@@ -11,6 +11,7 @@ const Home: React.FC = () => {
       <NavBar />
       <div className={styles.content}>
         <h1>Welcome to Pup Scouts</h1>
+
         <div className={styles.description}>
           <p className="font-bold">
             We are a professional dog walking and training company located in
