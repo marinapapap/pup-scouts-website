@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Carousell from "@/components/Carousell";
 import NavBar from "@/components/Header";
 import styles from "./Home.module.css";
 import Badges from "@/components/shared/Badges";
 import ContactForm from "@/components/shared/ContactForm";
 import Divider from "@/components/shared/Divider";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   return (
@@ -13,36 +15,86 @@ const Home: React.FC = () => {
         <h1>Welcome to Pup Scouts</h1>
 
         <div className={styles.description}>
-          <p className="font-bold">
+          <h3>
             We are a professional dog walking and training company located in
             Sussex
-          </p>
+          </h3>
 
-          <p>
-            Pup Scouts offer fantastic group walks across the South Downs and
-            surrounding areas, providing a safe and friendly environment for
-            dogs to socialise, exercise and explore. We cover the areas between
-            Hove and Worthing, transporting our dogs in comfortable, safe and
-            fully fitted vans.
-          </p>
+          <div className={styles.block}>
+            <div className={styles.carousellWrapper}>
+              <Carousell />
+            </div>
 
-          <p>
-            With over eight years experience working with dogs, as Scout Leaders
-            we take our jobs very seriously. We treat our Scouts with the love,
-            kindness and respect that all dogs deserve. We are grateful to all
-            our pawrents who trust us to walk and train their pups, and we can’t
-            wait to start your dog’s new Scout adventure with us!
-          </p>
+            <div>
+              <h4>
+                Pup Scouts offer fantastic group walks across the South Downs
+                and surrounding areas
+              </h4>
 
-          <p>
-            When your dog joins us through either walking or training, they
-            become a Pup Scout and have the opportunity to earn Scout badges
-            through good behaviour, exploration and socialising!
-          </p>
+              <p>
+                providing a safe and friendly environment for dogs to socialise,
+                exercise and explore. We cover the areas between Hove and
+                Worthing, transporting our dogs in comfortable, safe and fully
+                fitted vans.
+              </p>
 
-          <p className="font-bold">
-            Contact us to have a chat and arrange a free consultation
-          </p>
+              <p>
+                With{" "}
+                <span className="capitalise-font">
+                  over eight years experience working with dogs
+                </span>
+                , as Scout Leaders we take our jobs very seriously. We treat our
+                Scouts with the love, kindness and respect that all dogs
+                deserve. We are grateful to all our pawrents who trust us to
+                walk and train their pups, and we can’t wait to start your dog’s
+                new Scout adventure with us!
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.block}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/images/paws.png"
+                alt="Pup Scouts Logo"
+                fill
+                className={`${styles.image} ${styles.desktopImage}`}
+              />
+              <Image
+                src="/images/paws-horizontal.png"
+                alt="Pup Scouts Logo"
+                fill
+                className={`${styles.image} ${styles.mobileImage}`}
+              />
+            </div>
+
+            <div>
+              <h4>
+                With over eight years experience working with dogs, as Scout
+                Leaders we take our jobs very seriously.
+              </h4>
+
+              <p>
+                We treat our Scouts with the love, kindness and respect that all
+                dogs deserve. We are grateful to all our pawrents who trust us
+                to walk and train their pups, and we can't wait to start your
+                dog's new Scout adventure with us!
+              </p>
+
+              <p>
+                When your dog joins us through either walking or training, they
+                become a Pup Scout and have the opportunity to earn Scout badges
+                through good behaviour, exploration and socialising!
+              </p>
+            </div>
+          </div>
+
+          <h3>
+            <Link className={styles.link} href="/contact">
+              Contact us
+            </Link>{" "}
+            to have a chat and arrange a free consultation
+          </h3>
         </div>
         <Badges
           badges={[
@@ -76,7 +128,9 @@ const Home: React.FC = () => {
             you!
           </p>
         </div>
+
         <h3>Start your Pup Scouts adventure today!</h3>
+
         <Carousell />
       </div>
       <Divider />

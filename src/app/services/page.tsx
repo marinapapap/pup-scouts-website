@@ -24,7 +24,10 @@ const Services: React.FC = () => {
               width={600}
               height={600}
             />
-            <h2>Dog Walking</h2>
+            <h2>
+              Dog
+              <br /> Walking
+            </h2>
           </Link>
           <Link href="/services/dog-training" className={styles.imageWrapper}>
             <Image

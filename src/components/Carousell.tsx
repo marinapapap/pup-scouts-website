@@ -43,6 +43,9 @@ const Carousell: React.FC = () => {
     return () => ref.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Uncomment this section to enable auto-scrolling
+  // This will automatically scroll through the images every 4 seconds
+
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setCurrent((prev) => {

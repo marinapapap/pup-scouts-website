@@ -58,10 +58,12 @@
 @media (min-width: 768px) {
   .imageContainer {
     flex-direction: row;
+    margin: auto;
+    gap: 12rem;
   }
 
   .imageWrapper {
-    gap: 4rem;
+    gap: 3rem;
   }
 
   .description {
