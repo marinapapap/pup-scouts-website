@@ -1,6 +1,6 @@
-.content {
+.container {
   margin: 12rem 0 0 0;
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem;
@@ -8,14 +8,14 @@
 
 .hero {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .hero h1 {
   margin-bottom: 3rem;
 }
 
-.heroImages {
+.teamImages {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,94 +23,150 @@
   flex-wrap: wrap;
 }
 
-.heroImage {
+.teamImage {
   object-fit: contain;
 }
 
-.heroImages img:last-child {
+.teamImages img:last-child {
   transform: scaleX(-1);
 }
 
-
-.section, .sectionReverse {
-  margin: 4rem 0;
-  padding: 3rem 0;
-}
-
-.sectionContent {
+.contentSection,
+.contentSectionReverse,
+.contentSectionRight {
+  margin: 2rem 0;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
   flex-wrap: wrap;
 }
 
-.sectionReverse .sectionContent {
+.contentSectionReverse {
   flex-direction: row-reverse;
 }
 
-.textBlock {
+.contentSectionRight {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.textContent {
   flex: 1;
   min-width: 300px;
 }
 
-.textBlock h2 {
-  margin-bottom: 1.5rem;
+.textContent h2 {
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
 }
 
-.textBlock p {
+.textContent h2::before {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: currentColor;
+  max-width: 200px;
+  margin-bottom: 0.25rem;
+}
+
+.textContent h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: currentColor;
+  max-width: 200px;
+  margin-bottom: 0.25rem;
+  display: none;
+}
+
+.contentSectionRight .textContent h2 {
+  justify-content: flex-end;
+}
+
+.contentSectionRight .textContent h2::before {
+  display: none;
+}
+
+.contentSectionRight .textContent h2::after {
+  display: block;
+}
+
+.textContent p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #34495e;
 }
 
-.decorativeElement {
+.decorativeIcon {
   flex: 0 0 auto;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.decorImage {
-  opacity: 0.7;
+.decorativeIcon img {
   transition: transform 0.3s ease;
 }
 
-.decorImage:hover {
+.decorativeIcon img:hover {
   transform: scale(1.1) rotate(5deg);
 }
 
 @media (max-width: 768px) {
-  
-  .heroImages {
+  .teamImages {
     gap: 1rem;
   }
-  
-  .heroImage {
+
+  .teamImage {
     width: 120px;
     height: 120px;
   }
-  
-  .sectionContent,
-  .sectionReverse .sectionContent {
+
+  .contentSection,
+  .contentSectionReverse,
+  .contentSectionRight {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    gap: 1.5rem;
   }
-  
-  .textBlock {
+
+  .textContent {
     min-width: auto;
+    order: 1;
   }
-  
-  
-  .textBlock p {
+
+  .textContent h2,
+  .contentSectionRight .textContent h2 {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .textContent h2::before,
+  .textContent h2::after {
+    display: none;
+  }
+
+  .decorativeIcon {
+    order: 2;
+  }
+
+  .textContent p {
     font-size: 1.1rem;
   }
-  
-  .decorativeElement {
-    display: flex;
-  }
-  
-  .decorImage {
-    width: 80px;
-    height: 80px;
+
+  .decorativeIcon img {
+    width: 120px;
+    height: 120px;
   }
 }
