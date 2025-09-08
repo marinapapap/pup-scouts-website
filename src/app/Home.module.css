@@ -10,10 +10,6 @@
   margin-bottom: 0;
 }
 
-.content h3 {
-  margin: 3rem 0 0;
-}
-
 .description {
   margin: 0 2rem;
 }
@@ -78,7 +74,7 @@
   .block {
     flex-direction: row;
   }
-  
+
   .block:last-of-type {
     flex-direction: row-reverse;
   }

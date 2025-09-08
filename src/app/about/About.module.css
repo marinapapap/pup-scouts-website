@@ -19,12 +19,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .teamImage {
   object-fit: contain;
+  width: 120px;
+  height: 120px;
 }
 
 .teamImages img:last-child {
@@ -34,70 +36,61 @@
 .contentSection,
 .contentSectionReverse,
 .contentSectionRight {
-  margin: 2rem 0;
-  padding: 2rem 0;
+  margin: 1rem 0;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .contentSectionReverse {
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 
 .contentSectionRight {
-  justify-content: flex-end;
-  text-align: right;
+  justify-content: center;
+  text-align: center;
 }
 
 .textContent {
   flex: 1;
-  min-width: 300px;
+  min-width: auto;
+  order: 1;
 }
 
 .textContent h2 {
   margin-bottom: 2rem;
   position: relative;
   display: flex;
-  align-items: flex-end;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
+  align-items: center;
+  gap: 0;
+  padding-bottom: 0;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.textContent h2::before {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background: currentColor;
-  max-width: 200px;
-  margin-bottom: 0.25rem;
-}
-
+.textContent h2::before,
 .textContent h2::after {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background: currentColor;
-  max-width: 200px;
-  margin-bottom: 0.25rem;
   display: none;
 }
 
 .contentSectionRight .textContent h2 {
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contentSectionRight .textContent h2::before {
+.contentSectionRight .textContent h2::before,
+.contentSectionRight .textContent h2::after {
   display: none;
 }
 
-.contentSectionRight .textContent h2::after {
-  display: block;
-}
-
 .textContent p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: #34495e;
 }
@@ -107,66 +100,100 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  order: 2;
 }
 
 .decorativeIcon img {
   transition: transform 0.3s ease;
+  width: 120px;
+  height: 120px;
 }
 
 .decorativeIcon img:hover {
   transform: scale(1.1) rotate(5deg);
 }
 
-@media (max-width: 768px) {
+/* Desktop styles */
+@media (min-width: 768px) {
   .teamImages {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .teamImage {
-    width: 120px;
-    height: 120px;
+    width: auto;
+    height: auto;
   }
 
   .contentSection,
   .contentSectionReverse,
   .contentSectionRight {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    margin: 1rem 0;
-    padding: 1rem 0;
-    gap: 1.5rem;
+    flex-direction: row;
+    text-align: left;
+    justify-content: flex-start;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    gap: 4rem;
+  }
+
+  .contentSectionReverse {
+    flex-direction: row-reverse;
+  }
+
+  .contentSectionRight {
+    justify-content: flex-end;
+    text-align: right;
   }
 
   .textContent {
-    min-width: auto;
-    order: 1;
+    min-width: 300px;
+    order: 0;
   }
 
-  .textContent h2,
+  .textContent h2 {
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .textContent h2::before {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 2px;
+    background: currentColor;
+    max-width: 200px;
+    margin-bottom: 0.25rem;
+  }
+
   .contentSectionRight .textContent h2 {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding-bottom: 0;
+    justify-content: flex-end;
   }
 
-  .textContent h2::before,
-  .textContent h2::after {
+  .contentSectionRight .textContent h2::before {
     display: none;
   }
 
+  .contentSectionRight .textContent h2::after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 2px;
+    background: currentColor;
+    max-width: 200px;
+    margin-bottom: 0.25rem;
+  }
+
   .decorativeIcon {
-    order: 2;
+    order: 0;
   }
 
   .textContent p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .decorativeIcon img {
-    width: 120px;
-    height: 120px;
+    width: auto;
+    height: auto;
   }
 }

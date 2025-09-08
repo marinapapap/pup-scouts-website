@@ -17,26 +17,33 @@ const Services: React.FC = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          <Link href="/services/dog-walking" className={styles.imageWrapper}>
+          <Link
+            href="/services/dog-walking"
+            className={styles.imageWrapper}
+            aria-label="Learn more about our dog walking services"
+          >
+            <h2>Dog Walking</h2>
             <Image
               src="/images/tree.png"
-              alt="Dog walking"
+              alt="Illustration of a tree representing outdoor dog walking services"
               width={600}
               height={600}
+              priority
             />
-            <h2>
-              Dog
-              <br /> Walking
-            </h2>
           </Link>
-          <Link href="/services/dog-training" className={styles.imageWrapper}>
+          <Link
+            href="/services/dog-training"
+            className={styles.imageWrapper}
+            aria-label="Learn more about our puppy training classes"
+          >
+            <h2>Puppy Training</h2>
             <Image
               src="/images/dog.png"
-              alt="Dog training"
+              alt="Illustration of a dog representing puppy training services"
               width={600}
               height={600}
+              priority
             />
-            <h2>Puppy Training</h2>
           </Link>
         </div>
       </div>

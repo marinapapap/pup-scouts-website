@@ -52,14 +52,16 @@
 
 .logo {
   object-fit: contain;
+  width: 7rem;
+  height: 7rem;
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
     margin 0.3s ease-in-out;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .logo {
-    width: 7rem;
-    height: 7rem;
+    width: 8rem;
+    height: 8rem;
   }
 }
 

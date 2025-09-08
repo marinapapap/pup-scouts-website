@@ -10,8 +10,8 @@ const Contact: React.FC = () => {
     <div>
       <NavBar />
       <div className={styles.content}>
+        <h1>Contact Us</h1>
         <div className={styles.description}>
-          <h1>Contact Us</h1>
           <p>
             Please use the form below to get in contact and book your free dog
             walking consultation, or to enquire about our puppy training
