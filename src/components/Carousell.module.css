@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .viewport {
   width: 100%;
-  max-width: 375px;
+  max-width: 280px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -17,24 +17,39 @@
   box-sizing: content-box;
 }
 
+@media (min-width: 768px) {
+  .viewport {
+    max-width: 375px;
+  }
+}
+
 .viewport::-webkit-scrollbar {
   display: none;
 }
 
 .carousel {
   display: flex;
-  padding: 0;
+  padding-right: 140px;
 }
 
 .imageWrapper {
   flex: 0 0 auto;
-  width: 375px;
-  height: 375px;
-  margin: 0 16px;
+  width: 280px;
+  height: 280px;
+  margin: 0 12px;
   scroll-snap-align: center;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 375px;
+    height: 375px;
+    margin: 0 16px;
+  }
 }
 
 .image {
@@ -49,14 +64,20 @@
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
+  width: 12px;
+  height: 12px;
+  background: hsl(0, 0%, 70%);
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: hsl(12, 83%, 63%);
+  transform: scale(1.1);
 }
 
 .dot.active {
-  background: #333;
+  background: hsl(12, 83%, 63%);
+  transform: scale(1.2);
 }

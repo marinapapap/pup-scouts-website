@@ -52,6 +52,15 @@ const Home: React.FC = () => {
             </div>
           </div>
 
+          <Badges
+            badges={[
+              "jumping-jack",
+              "master-of-tricks",
+              "chase-master",
+              "luscious-locks",
+            ]}
+          />
+
           <div className={styles.block}>
             <div className={styles.imageWrapper}>
               <Image
@@ -77,8 +86,8 @@ const Home: React.FC = () => {
               <p>
                 We treat our Scouts with the love, kindness and respect that all
                 dogs deserve. We are grateful to all our pawrents who trust us
-                to walk and train their pups, and we can't wait to start your
-                dog's new Scout adventure with us!
+                to walk and train their pups, and we can&apos;t wait to start
+                your dog&apos;s new Scout adventure with us!
               </p>
 
               <p>
@@ -96,14 +105,7 @@ const Home: React.FC = () => {
             to have a chat and arrange a free consultation
           </h3>
         </div>
-        <Badges
-          badges={[
-            "jumping-jack",
-            "master-of-tricks",
-            "chase-master",
-            "luscious-locks",
-          ]}
-        />
+
         <div className={styles.description}>
           <p>
             From the &apos;Good Listener badge&apos; to the &apos;Tree Climber

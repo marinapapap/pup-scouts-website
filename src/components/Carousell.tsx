@@ -14,14 +14,18 @@ const Carousell: React.FC = () => {
   const viewportRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
-  const IMAGE_WIDTH = 375;
-  const GAP = 16;
-  const fullItemWidth = IMAGE_WIDTH + GAP;
+  const getItemWidth = () => {
+    const isDesktop = window.innerWidth >= 768;
+    const imageWidth = isDesktop ? 375 : 280;
+    const margin = isDesktop ? 32 : 24; // margin left + right
+    return imageWidth + margin;
+  };
 
   const handleScroll = () => {
     if (!viewportRef.current) return;
 
     const scrollLeft = viewportRef.current.scrollLeft;
+    const fullItemWidth = getItemWidth();
     const index = Math.round(scrollLeft / fullItemWidth);
     setCurrent(index);
   };
@@ -29,6 +33,7 @@ const Carousell: React.FC = () => {
   const scrollToIndex = (index: number) => {
     if (!viewportRef.current) return;
 
+    const fullItemWidth = getItemWidth();
     viewportRef.current.scrollTo({
       left: index * fullItemWidth,
       behavior: "smooth",
