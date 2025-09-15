@@ -77,6 +77,7 @@ const Carousell: React.FC = () => {
               />
             </div>
           ))}
+          <div className={styles.spacer} />
         </div>
       </div>
 

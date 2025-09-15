@@ -29,7 +29,10 @@
 
 .carousel {
   display: flex;
-  padding-right: 140px;
+}
+
+.spacer {
+  flex: 0 0 140px;
 }
 
 .imageWrapper {
@@ -49,6 +52,10 @@
     width: 375px;
     height: 375px;
     margin: 0 16px;
+  }
+  
+  .spacer {
+    flex: 0 0 187px;
   }
 }
 
