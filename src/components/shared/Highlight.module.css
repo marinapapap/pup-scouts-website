@@ -15,6 +15,11 @@
   text-align: center;
 }
 
+.highlight p {
+  color: black;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .highlight {
     padding: 3rem 4rem;
