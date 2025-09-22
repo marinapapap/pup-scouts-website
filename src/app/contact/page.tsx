@@ -11,20 +11,24 @@ const Contact: React.FC = () => {
       <NavBar />
       <div className={styles.content}>
         <h1>Contact Us</h1>
-        <div className={styles.description}>
-          <p>
-            Please use the form below to get in contact and book your free dog
-            walking consultation, or to enquire about our puppy training
-            classes.
-          </p>
-          <p>
-            Follow us on Facebook and Instagram - we love uploading photos and
-            videos of your pups on their adventures so you can see the fun
-            they&apos;re having!
-          </p>
-          <p className="font-bold">
-            Please do not hesitate to call or email us.
-          </p>
+
+        <h3>
+          Please use the form below to get in contact and book your free dog
+          walking consultation, or to enquire about our puppy training classes.
+        </h3>
+
+        <div className={styles.block}>
+          <div className={styles.textContent}>
+            <p>
+              <span>Follow us on Facebook and Instagram</span> - we love
+              uploading photos and videos of your pups on their adventures so
+              you can see the fun they're having!
+            </p>
+            <p>
+              <span>Please do not hesitate to call or email us.</span> We're
+              here to help with any questions about our services.
+            </p>
+          </div>
         </div>
         <Highlight>
           <div className={styles.highlight}>
@@ -58,6 +62,7 @@ const Contact: React.FC = () => {
       </div>
       <Divider />
       <ContactForm />
+      <Divider />
     </div>
   );
 };
