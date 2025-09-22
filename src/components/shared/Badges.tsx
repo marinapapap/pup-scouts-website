@@ -9,14 +9,17 @@ type BadgesProps = {
 };
 
 const Badges: React.FC<BadgesProps> = ({ badges, hasDivider = false }) => {
+  const className = (() => {
+    const classes = [styles.badges];
+    if (!hasDivider) classes.push(styles.badgesWithPadding);
+    if (badges.length >= 5 && badges.length <= 6) classes.push(styles.doubleRow);
+    return classes.join(' ');
+  })();
+
   return (
     <>
       {hasDivider && <Divider />}
-      <div
-        className={`${styles.badges} ${
-          !hasDivider ? styles.badgesWithPadding : ""
-        }`}
-      >
+      <div className={className}>
         {badges.map((badge, index) => {
           const pathToBadge = `/images/badges/${badge}.png`;
           const altText = `${badge.split("-").join(" ")} badge`;
