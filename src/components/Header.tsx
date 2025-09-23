@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    if (!isMobile) return;
+    if (!isMobile || isOpen) return;
     const handleScroll = () => {
       const scroll = Math.min(window.scrollY, 80);
       setScrollValue(scroll);
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
+  }, [isMobile, isOpen]);
 
   const headerHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
   const logoSize = isMobile ? `${7 - scrollValue / 70}rem` : "7rem";
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                 alt="Pup Scouts Home"
                 width={120}
                 height={120}
-                className={styles.logo}
+                className={`${styles.logo} ${isOpen ? styles.logoMenuOpen : ''}`}
                 style={{
                   width: logoSize,
                   height: logoSize,

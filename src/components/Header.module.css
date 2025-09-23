@@ -54,8 +54,11 @@
   object-fit: contain;
   width: 7rem;
   height: 7rem;
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
-    margin 0.3s ease-in-out;
+  transition:
+    width 0.3s ease-in-out,
+    height 0.3s ease-in-out,
+    margin 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -63,6 +66,10 @@
     width: 8rem;
     height: 8rem;
   }
+}
+
+.logoMenuOpen {
+  transform: translateY(2rem);
 }
 
 .dropdownContainer {
@@ -112,7 +119,7 @@
 .burgerMenu {
   position: absolute;
   right: 0;
-  padding-right: 1.25rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px) {
