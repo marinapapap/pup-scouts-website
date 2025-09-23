@@ -22,11 +22,11 @@ const Contact: React.FC = () => {
             <p>
               <span>Follow us on Facebook and Instagram</span> - we love
               uploading photos and videos of your pups on their adventures so
-              you can see the fun they're having!
+              you can see the fun they&apos;re having!
             </p>
             <p>
-              <span>Please do not hesitate to call or email us.</span> We're
-              here to help with any questions about our services.
+              <span>Please do not hesitate to call or email us.</span>{" "}
+              We&apos;re here to help with any questions about our services.
             </p>
           </div>
         </div>

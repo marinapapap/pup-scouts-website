@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ServicesMenu from "./ServicesMenu";
 import styles from "./MobileMenu.module.css";
@@ -11,6 +12,12 @@ type Props = {
 
 const MobileMenu = ({ isOpen }: Props) => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getLinkClassName = (href: string) => {
+    const isActive = pathname === href || (href === "/services" && pathname.startsWith("/services/"));
+    return isActive ? `${styles.link} ${styles.activeLink}` : styles.link;
+  };
 
   return (
     <div
@@ -18,10 +25,10 @@ const MobileMenu = ({ isOpen }: Props) => {
     >
       {!isServicesOpen && (
         <>
-          <Link href="/" className={styles.link}>
+          <Link href="/" className={getLinkClassName("/")} aria-disabled={pathname === "/"}>
             HOME
           </Link>
-          <Link href="/about" className={styles.link}>
+          <Link href="/about" className={getLinkClassName("/about")} aria-disabled={pathname === "/about"}>
             ABOUT
           </Link>
           {/* <button
@@ -31,10 +38,10 @@ const MobileMenu = ({ isOpen }: Props) => {
           >
             SERVICES <ChevronRight className={styles.chevron} />
           </button> */}
-          <Link href="/services" className={styles.link}>
+          <Link href="/services" className={getLinkClassName("/services")} aria-disabled={pathname === "/services" || pathname.startsWith("/services/")}>
             SERVICES
           </Link>
-          <Link href="/contact" className={styles.link}>
+          <Link href="/contact" className={getLinkClassName("/contact")} aria-disabled={pathname === "/contact"}>
             CONTACT
           </Link>
         </>

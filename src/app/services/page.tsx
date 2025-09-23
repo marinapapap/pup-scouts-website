@@ -11,10 +11,10 @@ const Services: React.FC = () => {
       <div className={styles.content}>
         <h1>Our Services</h1>
         <div className={styles.description}>
-          <p>
+          <h3>
             We offer group dog walking and puppy training classes. Please click
             below to find out more information!
-          </p>
+          </h3>
         </div>
         <div className={styles.imageContainer}>
           <Link

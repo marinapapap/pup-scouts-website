@@ -13,13 +13,18 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const newIsMobile = window.innerWidth <= 768;
+      setIsMobile(newIsMobile);
+      // Close mobile menu if switching to desktop
+      if (!newIsMobile && isOpen) {
+        setIsOpen(false);
+      }
     };
 
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isMobile) return;
