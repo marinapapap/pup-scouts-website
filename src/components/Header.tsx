@@ -40,18 +40,23 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (!isMobile || isOpen) return;
-    const handleScroll = () => {
+    const handleScroll = (() => {
       const scroll = Math.min(window.scrollY, 80);
       setScrollValue(scroll);
-    };
+
+      return () => {
+        const scroll = Math.min(window.scrollY, 80);
+        setScrollValue(scroll);
+      };
+    })();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile, isOpen]);
 
   const headerHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
-  const logoSize = isMobile ? `${7 - scrollValue / 70}rem` : "7rem";
-  const logoMargin = isMobile ? `${2 - scrollValue / 100}rem` : "2rem";
+  const logoSize = isMobile && !isOpen ? `${7 - scrollValue / 70}rem` : "7rem";
+  const logoMargin = isMobile && !isOpen ? `${2 - scrollValue / 100}rem` : "2rem";
 
   return (
     <>
