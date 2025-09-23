@@ -51,14 +51,14 @@
 }
 
 .servicesButton {
+  font-family: "cubano", sans-serif;
   font-size: 2.5rem;
   cursor: pointer;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: max-content;
+  background: none;
+  border: none;
+  color: hsl(40, 55%, 84%);
+  transition: color 0.2s ease-in-out;
+  text-align: center;
 }
 
 .servicesButton:hover {

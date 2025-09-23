@@ -31,16 +31,13 @@ const MobileMenu = ({ isOpen }: Props) => {
           <Link href="/about" className={getLinkClassName("/about")} aria-disabled={pathname === "/about"}>
             ABOUT
           </Link>
-          {/* <button
+          <button
             className={styles.servicesButton}
             onClick={() => setIsServicesOpen(true)}
             aria-label="Services option"
           >
-            SERVICES <ChevronRight className={styles.chevron} />
-          </button> */}
-          <Link href="/services" className={getLinkClassName("/services")} aria-disabled={pathname === "/services" || pathname.startsWith("/services/")}>
-            SERVICES
-          </Link>
+            SERVICES →
+          </button>
           <Link href="/contact" className={getLinkClassName("/contact")} aria-disabled={pathname === "/contact"}>
             CONTACT
           </Link>
