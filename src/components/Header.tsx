@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import BurgerButton from "./BurgerButton";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
@@ -10,6 +11,17 @@ const Header: React.FC = () => {
   const [scrollValue, setScrollValue] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+
+  const getLinkClassName = (href: string) => {
+    const isActive = pathname === href || (href === "/services" && pathname.startsWith("/services"));
+    return isActive ? `${styles.link} ${styles.hoverEffect} ${styles.activeLink}` : `${styles.link} ${styles.hoverEffect}`;
+  };
+
+  const getDropdownItemClassName = (href: string) => {
+    const isActive = pathname === href;
+    return isActive ? `${styles.dropdownItem} ${styles.activeDropdownItem}` : styles.dropdownItem;
+  };
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -46,13 +58,10 @@ const Header: React.FC = () => {
       <nav className={styles.nav} style={{ height: headerHeight }}>
         <div className={styles.navContainer}>
           <div className={styles.navLinks}>
-            <Link href="/" className={styles.link}>
+            <Link href="/" className={getLinkClassName("/")}>
               Home
             </Link>
-            <Link
-              href="/about"
-              className={`${styles.link} ${styles.hoverEffect}`}
-            >
+            <Link href="/about" className={getLinkClassName("/about")}>
               About
             </Link>
             <Link href="/" className={styles.logoContainer}>
@@ -69,27 +78,20 @@ const Header: React.FC = () => {
                 }}
               />
             </Link>
-            {/* <div className={styles.dropdownContainer}>
-              <button className={styles.dropdownButton}>Services</button>
+            <div className={styles.dropdownContainer}>
+              <Link href="/services" className={getLinkClassName("/services")}>
+                Services
+              </Link>
               <div className={styles.dropdownMenu}>
-                <Link href="/service-1" className={styles.dropdownItem}>
-                  Walking
+                <Link href="/services/dog-walking" className={getDropdownItemClassName("/services/dog-walking")}>
+                  Dog Walking
                 </Link>
-                <Link href="/service-2" className={styles.dropdownItem}>
-                  Training
+                <Link href="/services/dog-training" className={getDropdownItemClassName("/services/dog-training")}>
+                  Puppy Training
                 </Link>
               </div>
-            </div> */}
-            <Link
-              href="/services"
-              className={`${styles.link} ${styles.hoverEffect}`}
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className={`${styles.link} ${styles.hoverEffect}`}
-            >
+            </div>
+            <Link href="/contact" className={getLinkClassName("/contact")}>
               Contact
             </Link>
           </div>
