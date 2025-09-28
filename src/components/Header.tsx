@@ -24,33 +24,50 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
+    let resizeTimer: NodeJS.Timeout;
+
     const checkScreenSize = () => {
-      const newIsMobile = window.innerWidth <= 768;
-      setIsMobile(newIsMobile);
-      // Close mobile menu if switching to desktop
-      if (!newIsMobile && isOpen) {
-        setIsOpen(false);
-      }
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newIsMobile = window.innerWidth <= 768;
+        setIsMobile(newIsMobile);
+        // Close mobile menu if switching to desktop
+        if (!newIsMobile && isOpen) {
+          setIsOpen(false);
+        }
+      }, 100);
     };
 
     checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+    window.addEventListener("resize", checkScreenSize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+      clearTimeout(resizeTimer);
+    };
   }, [isOpen]);
 
   useEffect(() => {
     if (!isMobile || isOpen) return;
+
+    let ticking = false;
+
     const handleScroll = (() => {
       const scroll = Math.min(window.scrollY, 80);
       setScrollValue(scroll);
 
       return () => {
-        const scroll = Math.min(window.scrollY, 80);
-        setScrollValue(scroll);
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const scroll = Math.min(window.scrollY, 80);
+            setScrollValue(scroll);
+            ticking = false;
+          });
+          ticking = true;
+        }
       };
     })();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile, isOpen]);
 

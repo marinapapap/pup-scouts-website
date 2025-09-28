@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/components/Header";
 import Badges from "@/components/shared/Badges";
-import styles from "./Services.module.css";
+import styles from "./services.module.css";
 
 const Services: React.FC = () => {
   return (
