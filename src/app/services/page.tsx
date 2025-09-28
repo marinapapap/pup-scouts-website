@@ -24,10 +24,11 @@ const Services: React.FC = () => {
           >
             <h2>Dog Walking</h2>
             <Image
-              src="/images/tree.png"
+              src="/images/tree.webp"
               alt="Illustration of a tree representing outdoor dog walking services"
-              width={600}
-              height={600}
+              width={350}
+              height={350}
+              sizes="(max-width: 480px) 280px, (max-width: 680px) 320px, 350px"
               priority
             />
           </Link>
@@ -38,10 +39,11 @@ const Services: React.FC = () => {
           >
             <h2>Puppy Training</h2>
             <Image
-              src="/images/dog.png"
+              src="/images/dog.webp"
               alt="Illustration of a dog representing puppy training services"
-              width={600}
-              height={600}
+              width={350}
+              height={350}
+              sizes="(max-width: 480px) 280px, (max-width: 680px) 320px, 350px"
               priority
             />
           </Link>
@@ -52,7 +54,7 @@ const Services: React.FC = () => {
           "jumping-jack",
           "master-of-tricks",
           "chase-master",
-          "luscious-locks",
+          "lucious-locks",
         ]}
         hasDivider
       />

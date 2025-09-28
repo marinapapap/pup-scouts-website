@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             "jumping-jack",
             "master-of-tricks",
             "chase-master",
-            "luscious-locks",
+            "lucious-locks",
           ]}
         />
 

@@ -13,14 +13,14 @@ const AboutPage: React.FC = () => {
           <h1>About Us</h1>
           <div className={styles.teamImages}>
             <Image
-              src="/images/polly.png"
+              src="/images/polly.webp"
               alt="Polly - Scout Leader"
               width={200}
               height={200}
               className={styles.teamImage}
             />
             <Image
-              src="/images/lucy.png"
+              src="/images/lucy.webp"
               alt="Lucy - Scout Leader"
               width={200}
               height={200}
@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
           </div>
           <div className={styles.decorativeIcon}>
             <Image
-              src="/images/squirrel.png"
+              src="/images/squirrel.webp"
               alt="Decorative squirrel"
               width={160}
               height={160}
@@ -51,7 +51,7 @@ const AboutPage: React.FC = () => {
         <section className={styles.contentSectionRight}>
           <div className={styles.decorativeIcon}>
             <Image
-              src="/images/stick.png"
+              src="/images/stick.webp"
               alt="Decorative stick"
               width={160}
               height={160}
@@ -83,7 +83,7 @@ const AboutPage: React.FC = () => {
           </div>
           <div className={styles.decorativeIcon}>
             <Image
-              src="/images/tree.png"
+              src="/images/tree.webp"
               alt="Decorative tree"
               width={160}
               height={160}

@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
         <Highlight>
           <div className={styles.highlight}>
             <Image
-              src="/images/squirrel.png"
+              src="/images/squirrel.webp"
               alt="Dog training"
               width={180}
               height={180}

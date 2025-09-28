@@ -14,13 +14,19 @@ const Header: React.FC = () => {
   const pathname = usePathname();
 
   const getLinkClassName = (href: string) => {
-    const isActive = pathname === href || (href === "/services" && pathname.startsWith("/services"));
-    return isActive ? `${styles.link} ${styles.hoverEffect} ${styles.activeLink}` : `${styles.link} ${styles.hoverEffect}`;
+    const isActive =
+      pathname === href ||
+      (href === "/services" && pathname.startsWith("/services"));
+    return isActive
+      ? `${styles.link} ${styles.hoverEffect} ${styles.activeLink}`
+      : `${styles.link} ${styles.hoverEffect}`;
   };
 
   const getDropdownItemClassName = (href: string) => {
     const isActive = pathname === href;
-    return isActive ? `${styles.dropdownItem} ${styles.activeDropdownItem}` : styles.dropdownItem;
+    return isActive
+      ? `${styles.dropdownItem} ${styles.activeDropdownItem}`
+      : styles.dropdownItem;
   };
 
   useEffect(() => {
@@ -73,7 +79,8 @@ const Header: React.FC = () => {
 
   const headerHeight = isMobile ? `${8 - scrollValue / 60}rem` : "8rem";
   const logoSize = isMobile && !isOpen ? `${7 - scrollValue / 70}rem` : "7rem";
-  const logoMargin = isMobile && !isOpen ? `${2 - scrollValue / 100}rem` : "2rem";
+  const logoMargin =
+    isMobile && !isOpen ? `${2 - scrollValue / 100}rem` : "2rem";
 
   return (
     <>
@@ -88,16 +95,18 @@ const Header: React.FC = () => {
             </Link>
             <Link href="/" className={styles.logoContainer}>
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Pup Scouts Home"
                 width={120}
                 height={120}
-                className={`${styles.logo} ${isOpen ? styles.logoMenuOpen : ''}`}
+                sizes="(max-width: 768px) 120px, 128px"
+                className={`${styles.logo} ${isOpen ? styles.logoMenuOpen : ""}`}
                 style={{
                   width: logoSize,
                   height: logoSize,
                   margin: logoMargin,
                 }}
+                priority
               />
             </Link>
             <div className={styles.dropdownContainer}>
@@ -105,10 +114,16 @@ const Header: React.FC = () => {
                 Services
               </Link>
               <div className={styles.dropdownMenu}>
-                <Link href="/services/dog-walking" className={getDropdownItemClassName("/services/dog-walking")}>
+                <Link
+                  href="/services/dog-walking"
+                  className={getDropdownItemClassName("/services/dog-walking")}
+                >
                   Dog Walking
                 </Link>
-                <Link href="/services/dog-training" className={getDropdownItemClassName("/services/dog-training")}>
+                <Link
+                  href="/services/dog-training"
+                  className={getDropdownItemClassName("/services/dog-training")}
+                >
                   Puppy Training
                 </Link>
               </div>
